@@ -7,6 +7,7 @@ num=1;
 printf("I am a simaple ");
 printf("computer.\n");
 printf("my favorite number is %d because it is the first.\n",num);
+
 return 0;
 
 }
