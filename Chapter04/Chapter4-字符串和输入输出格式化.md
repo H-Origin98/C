@@ -97,6 +97,31 @@ int main(void)
 
 
 
+* Strlen()函数
+
+
+
+```c
+#include <stdio.h>
+#include <string.h>//包含strlen（）相关的函数原型。
+
+#define PRAISE "you are an extraordinary being."
+
+int main(void)
+{
+    char name [40];
+
+    printf("What is your name?\n");
+    scanf("%s",name);
+    printf("Hello, %s .%s \n",name ,PRAISE);
+    printf("your name of %zd letters occupies %zd memory cells.\n",
+        strlen(name),sizeof(name));//在逗号后面增加换行。可以增加代码的可读性。这种方法可以用于处理很长的printf（）语句。
+    printf("The phrase of praise has %zd letters and occupies %zd memory cells\n",
+        strlen(PRAISE),sizeof(PRAISE));
+    return 0;
+}
+```
+
 
 
 
