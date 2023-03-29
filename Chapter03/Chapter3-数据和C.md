@@ -221,11 +221,11 @@ int main (void)
 
     //获取数据类型占用的字节
     /*
-    size of long big=8
-    size of long long big=8
-    size of short=2
-    size of unsigned=4
-    size of int=4
+    size of long big=8byte
+    size of long long big=8byte
+    size of short=2byte
+    size of unsigned=4byte
+    size of int=4byte
     */
     printf("size of long big=%zd\n",sizeof(long int));
     printf("size of long long big=%zd\n",sizeof(long long int));
@@ -238,5 +238,7 @@ int main (void)
 
 
 
+3.5.6 ASCII
 
+![](e850352ac65c103880a07b53bc119313b17e8941.png)
 
