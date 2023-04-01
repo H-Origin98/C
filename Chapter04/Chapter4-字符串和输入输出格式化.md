@@ -122,7 +122,118 @@ int main(void)
 }
 ```
 
+## 4.3 常量的和C预处理器
+
+### 4.3.1.常量的定义方式
+
+1. **define 常量名 值**
+
+​			比如：# define TEX 0.15 //（表示将0.15赋值给了TEX）
+
+   *    常量名用大写 
+
+   *    值前面不能加任何符号。值可以是int 、float、char等类型
+
+        ```c
+        #include <stdio.h>
+        
+        # define PI 3.14159
+        
+        int main(void)
+        {
+            float area ,circum,ridius;
+            printf("what is the radius of your pizza ?\n");
+            scanf("%f",&ridius);
+            area=PI * ridius*ridius;
+            circum=2 * PI * ridius;
+            printf("your basic pizza parameters are as follows:\n");
+            printf("cirunmference =% 1.2f, area= %1.2f \n",circum,area);
+            return 0;
+        }
+        ```
+
+        
+
+2. **使用const关键字**
+
+   比如：const int MONT=12;
+
+* const是限定一个变量为只读变量。语法格式为：**const  数据类型 变量名 = 值**
+
+3. **明示常量**
+
+![image-20230401122737201](/Users/yuanjiehuang/Library/Application Support/typora-user-images/image-20230401122737201.png)
 
 
 
+![image-20230401122755470](/Users/yuanjiehuang/Library/Application Support/typora-user-images/image-20230401122755470.png)
 
+## 4.4 printf()与scanf()
+
+### 4.4.1printf()函数
+
+1. Printf()使用格式字符串和参数列表。
+2. 转换说明及其打印的输出结果：
+
+![image-20230401123944784](/Users/yuanjiehuang/Library/Application Support/typora-user-images/image-20230401123944784.png)
+
+3. printf() 转换说明的修饰符
+
+   ![image-20230401125101221](/Users/yuanjiehuang/Library/Application Support/typora-user-images/image-20230401125101221.png)
+
+```c
+# include <stdio.h>
+# define PAGES 959
+
+int main (void)
+{
+
+    printf("*%d*\n",PAGES);
+    printf("*%d*\n",PAGES);
+    printf("*%10d*\n",PAGES);
+    printf("*%-10d*\n",PAGES);
+
+
+    return 0;
+}
+
+//该程序输出
+*959*
+*959*
+*       959*
+*959       *
+```
+
+```c
+# include <stdio.h>
+
+
+int main (void)
+{
+ const double RENT = 3853.99;
+printf("*%f*\n",RENT);
+printf("*%e*\n",RENT);
+printf("*%4.2f*\n",RENT);
+printf("*%3.1f*\n",RENT);
+printf("*%10.3f*\n",RENT);
+printf("*%10.3E*\n",RENT);
+printf("*%+4.2f*\n",RENT);
+printf("*%010.2f*\n",RENT);
+printf("*%a10.2f*\n",RENT);
+    return 0;
+}
+//该程序输出
+*3853.990000*
+*3.853990e+03*
+*3853.99*
+*3854.0*
+*  3853.990*
+* 3.854E+03*
+*+3853.99*
+*0003853.99*
+*aaa3853.99*
+```
+
+4. 转换说明的意义：
+
+   把给定的值翻译成十进制整数文本，然后打印出来
